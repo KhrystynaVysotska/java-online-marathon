@@ -6,14 +6,12 @@ For the purpose of this problem, assume that your function returns 0 when the re
 
 class Solution {
     public int reverse(int x) {
-        final int INT_MIN = -2147483648;
-        final int INT_MAX = 2147483647;
         int reversed = 0;
         while(x != 0) {
             reversed = reversed*10 + x%10;
             x/=10;
         }
-        if((reversed <= INT_MIN)||(reversed >=INT_MAX)){
+        if((reversed <= Integer.MIN_VALUE)||(reversed >=Integer.MAX_VALUE)){
             return 0;
         }
         return reversed;
