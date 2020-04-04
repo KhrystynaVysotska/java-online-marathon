@@ -7,7 +7,7 @@ class Solution {
     public int mySqrt(int x) {
         int root = 0;
         int i = 1;
-        while(x != 0) {
+        while(x-i >= 0) {
             x-=i;
             root+=1;
             i+=2;
