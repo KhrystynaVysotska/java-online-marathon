@@ -4,7 +4,7 @@ import java.util.List;
 
 public class MyUtils {
     public String differentWords(String originalText, String modifyText) {
-        String[] original = originalText.split("\\s");
+        String[] original = originalText.split("\\s+");
         String[] modified = modifyText.split("\\s");
         List<String> list = new ArrayList<String>();
         List<String> list2 = new ArrayList<String>();
@@ -28,9 +28,10 @@ public class MyUtils {
                     if (i != 0) {
                         result += " ";
                     }
+                    
                     result += list2.get(j).toUpperCase();
-                    if (j < list2.size()) {
-                        //result += " ";
+                    if(i == 0) {
+                        ++i;
                     }
                 }
             } else {
@@ -39,6 +40,6 @@ public class MyUtils {
                 }
             }
         }
-        return result;
+        return result.trim();
     }
 }
